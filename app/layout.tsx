@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { HomeIcon } from "fc/icons";
+import { MenuIcon } from "fc/icons";
 import Link from "next/link";
 import "./globals.css";
 import { ActiveButtonLink } from "./shared/ActiveLink";
@@ -33,10 +33,10 @@ export default function RootLayout({
         <header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
           <div className="flex h-full w-full items-center justify-between px-2">
             <div className="flex items-center gap-2">
+              <MenuIcon className="sm:hidden inline-block" />
               <Link href="/">
-                <HomeIcon />
+                <span>FC</span>
               </Link>
-              <span>FC</span>
             </div>
             <div className="flex gap-2">
               <ActiveButtonLink href="/components">Components</ActiveButtonLink>
