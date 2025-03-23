@@ -20,12 +20,9 @@ export default async function Page({
 
   return (
     <div>
-      My Post: {id}
-      <div>
-        <Suspense fallback="loading...">
-          <MDContent />
-        </Suspense>
-      </div>
+      <Suspense fallback="loading...">
+        <MDContent />
+      </Suspense>
     </div>
   );
 }
