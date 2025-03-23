@@ -1,7 +1,7 @@
 import { startCase } from "lodash-es";
 import { lazy } from "react";
 
-export const componentsKeys = ["button", "app-bar", "aa"];
+export const componentsKeys = ["button", "app-bar"];
 export const catMap = new Map();
 export const catList = componentsKeys.map((v) => {
   const item = {
