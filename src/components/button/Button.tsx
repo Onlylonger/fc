@@ -17,7 +17,7 @@ export const getButtonClassNames = cva(
       },
       size: {
         default: "h-9 px-4 py-2",
-        sm: "",
+        sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "",
         icon: "size-9",
       },
