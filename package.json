@@ -1,43 +1,14 @@
 {
   "name": "fc",
-  "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@9.0.2",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "turbo run dev"
   },
-  "dependencies": {
-    "@floating-ui/react": "^0.27.5",
-    "@mdx-js/loader": "^3.1.0",
-    "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^15.2.3",
-    "@types/mdx": "^2.0.13",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lodash-es": "^4.17.21",
-    "lucide-react": "^0.483.0",
-    "next": "15.2.3",
-    "prism-react-renderer": "^2.4.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-live": "^4.1.8",
-    "remark-gfm": "^4.0.1",
-    "sonner": "^2.0.1",
-    "vaul": "^1.1.2"
+  "engines": {
+    "node": ">=18"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/lodash-es": "^4.17.12",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.2.3",
-    "raw-loader": "^4.0.2",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "turbo": "^2.4.4"
   }
 }
