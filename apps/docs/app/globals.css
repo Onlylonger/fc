@@ -1,8 +1,7 @@
-@layer theme, base, components, utilities;
+@layer theme, base;
 
 @import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities);
+@import "tailwindcss/utilities.css";
 
 @import "@shilong/rc/style.css";
 @import "./github.css";

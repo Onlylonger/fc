@@ -15,15 +15,27 @@ const nextConfig: NextConfig = {
           loaders: ["raw-loader"],
           as: "*.js",
         },
+        "*.svg": {
+          loaders: ["@svgr/webpack"],
+          as: "*.js",
+        },
       },
     },
   },
   webpack: (config) => {
     config.module.rules.push({
-      test: /\.txt/i,
+      test: /\.txt$/i,
       use: [
         {
           loader: "raw-loader",
+        },
+      ],
+    });
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: [
+        {
+          loader: "@svgr/webpack",
         },
       ],
     });
