@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
+        <header className="border-border border-[var(--s-accent)] bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
           <div className="flex h-full w-full items-center justify-between px-2">
             <div className="flex items-center gap-2">
               <MenuIcon className="sm:hidden inline-block" />
