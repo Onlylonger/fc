@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { MenuIcon } from "@shilong/rc/icons";
+import { AppBar } from "@shilong/rc/components";
 import Link from "next/link";
 import "./globals.css";
 import { ActiveButtonLink } from "./shared/ActiveLink";
@@ -30,7 +31,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="border-border border-[var(--s-accent)] bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
+        <AppBar
+          mobile={{
+            left: <>mobile left</>,
+            right: <>mobile right</>,
+          }}
+          tablet={{
+            left: <>tablet left</>,
+            right: <>tablet right</>,
+          }}
+        />
+        {/* <header className="border-border border-[var(--s-accent)] bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
           <div className="flex h-full w-full items-center justify-between px-2">
             <div className="flex items-center gap-2">
               <MenuIcon className="sm:hidden inline-block" />
@@ -45,7 +56,7 @@ export default function RootLayout({
               <ActiveButtonLink href="/icons">Icons</ActiveButtonLink>
             </div>
           </div>
-        </header>
+        </header> */}
         {children}
       </body>
     </html>

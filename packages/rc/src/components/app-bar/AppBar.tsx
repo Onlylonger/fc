@@ -15,8 +15,8 @@ const Layout = (props: LayoutProps) => {
   const { left, right } = props;
 
   return (
-    <header className="border-border bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
-      <div className="flex h-full w-full items-center justify-between px-5">
+    <header className="sl-app-bar">
+      <div className="demo flex h-full w-full items-center justify-between px-5">
         <div className="flex items-center gap-2">{left}</div>
         <div className="flex gap-2">{right}</div>
       </div>

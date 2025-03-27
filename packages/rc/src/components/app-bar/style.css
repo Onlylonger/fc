@@ -1,0 +1,9 @@
+.sl-app-bar {
+  @apply bg-var-background-default/90 supports-[backdrop-filter]:bg-var-background-default/60 sticky top-0 m-0 box-border h-14 w-full border-b border-neutral-100 p-0 backdrop-blur;
+
+  .demo {
+    display: flex;
+    color: oklab(59.686% 0.1009 0.1192);
+    @apply bg-var-primary-main px-2;
+  }
+}
