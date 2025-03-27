@@ -1,0 +1,39 @@
+.sl-button {
+  @apply text-var-text-primary box-border inline-flex cursor-pointer items-center justify-center gap-2 rounded-md border-0 bg-transparent font-[inherit] text-sm font-medium whitespace-nowrap opacity-100 [&_svg:not([class*='size-'])]:size-4;
+
+  &.variant-default {
+    @apply bg-var-primary-main text-var-primary-contrast-text shadow-xs hover:opacity-90;
+  }
+
+  &.variant-outline {
+    @apply border border-neutral-200 shadow-xs hover:bg-neutral-100;
+  }
+
+  &.variant-ghost {
+    @apply hover:bg-neutral-100;
+  }
+
+  &.variant-destructive {
+    @apply bg-var-error-main text-var-error-contrast-text hover:opacity-90;
+  }
+
+  &.variant-secondary {
+    @apply bg-var-secondary-main text-var-secondary-contrast-text hover:opacity-90;
+  }
+
+  &.variant-link {
+    @apply text-var-text-primary underline-offset-4 hover:underline;
+  }
+
+  &.size-default {
+    @apply h-9 px-4 py-2;
+  }
+
+  &.size-sm {
+    @apply h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5;
+  }
+
+  &.size-icon {
+    @apply size-9;
+  }
+}

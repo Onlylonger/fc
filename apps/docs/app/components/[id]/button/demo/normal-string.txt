@@ -5,4 +5,5 @@
   <Button variant="outline">Outline</Button>
   <Button variant="ghost">Ghost</Button>
   <Button variant="link">Link</Button>
+  <Button variant="outline"> <MenuIcon /> Link</Button>
 </div>
