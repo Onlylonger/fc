@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { MenuIcon } from "@shilong/rc/icons";
-import { AppBar } from "@shilong/rc/components";
 import Link from "next/link";
 import "./globals.css";
 import { ActiveButtonLink } from "./shared/ActiveLink";
+import LogoSvg from "./logo.svg";
+import Image from "next/image";
+import VaulDrawer from "./Drawer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,6 +22,22 @@ export const metadata: Metadata = {
   description: "simple components hooks utils icons",
 };
 
+const RightNav = () => {
+  return (
+    <>
+      <div className="hidden md:flex gap-2">
+        <ActiveButtonLink href="/components">Components</ActiveButtonLink>
+        <ActiveButtonLink href="/hooks">Hooks</ActiveButtonLink>
+        <ActiveButtonLink href="/utils">Utils</ActiveButtonLink>
+        <ActiveButtonLink href="/icons">Icons</ActiveButtonLink>
+      </div>
+      <div className="flex md:hidden">
+        <VaulDrawer />
+      </div>
+    </>
+  );
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -31,32 +48,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppBar
-          mobile={{
-            left: <>mobile left</>,
-            right: <>mobile right</>,
-          }}
-          tablet={{
-            left: <>tablet left</>,
-            right: <>tablet right</>,
-          }}
-        />
-        {/* <header className="border-border border-[var(--s-accent)] bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
+        <header className="border-border border-neutral-100 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 h-14 w-full border-b backdrop-blur">
           <div className="flex h-full w-full items-center justify-between px-2">
             <div className="flex items-center gap-2">
-              <MenuIcon className="sm:hidden inline-block" />
-              <Link href="/">
-                <span>FC</span>
+              <Link href="/" className="ml-2">
+                <Image src={LogoSvg} alt="ss" width={30} height={30} />
               </Link>
             </div>
-            <div className="flex gap-2">
-              <ActiveButtonLink href="/components">Components</ActiveButtonLink>
-              <ActiveButtonLink href="/hooks">Hooks</ActiveButtonLink>
-              <ActiveButtonLink href="/utils">Utils</ActiveButtonLink>
-              <ActiveButtonLink href="/icons">Icons</ActiveButtonLink>
-            </div>
+            <RightNav />
           </div>
-        </header> */}
+        </header>
         {children}
       </body>
     </html>

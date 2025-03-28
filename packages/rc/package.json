@@ -39,10 +39,9 @@
   "scripts": {
     "dev": "concurrently \"npm run dev:js\" \"npm run dev:css\"",
     "dev:js": "tsc -w",
-    "dev:css": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
-    "dev:post": "postcss ./src/style.css -o ./dist/style.css --watch",
+    "dev:css": "postcss ./src/style.css -o ./dist/style.css --watch",
     "copy-css": "npx copyfiles -u 1 src/style.css dist/",
-    "build": "tsc && tailwindcss -i ./src/style.css -o ./dist/style.css",
+    "build": "tsc && postcss ./src/style.css -o ./dist/style.css",
     "lint": "eslint ."
   },
   "peerDependencies": {
@@ -56,7 +55,7 @@
     }
   },
   "browserslist": [
-    "defaults"
+    "> 0.01% and not dead"
   ],
   "files": [
     "dist",
@@ -73,7 +72,6 @@
   "devDependencies": {
     "@eslint/js": "^9.19.0",
     "@sl/tsconfig": "workspace:^",
-    "@tailwindcss/cli": "^4.0.15",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^22.13.8",
     "@types/react": "^19.0.8",

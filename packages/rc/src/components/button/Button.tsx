@@ -1,21 +1,22 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { clsx } from "clsx";
+import { Children, cloneElement, isValidElement } from "react";
 
-export const getButtonClassNames = cva("sl-button", {
+export const getButtonClassNames = cva("slButtonBase", {
   variants: {
     variant: {
-      default: "variant-default",
-      destructive: "variant-destructive",
-      outline: "variant-outline",
-      secondary: "variant-secondary",
-      ghost: "variant-ghost",
-      link: "variant-link",
+      default: "slButtonVariantDefault",
+      destructive: "slButtonVariantDestructive",
+      outline: "slButtonVariantOutline",
+      secondary: "slButtonVariantSecondary",
+      ghost: "slButtonVariantGhost",
+      link: "slButtonVariantLink",
     },
     size: {
-      default: "size-default",
-      sm: "size-sm",
-      lg: "size-lg",
-      icon: "size-icon",
+      default: "slButtonSizeDefault",
+      sm: "slButtonSizeSm",
+      lg: "slButtonSizeLg",
+      icon: "slButtonSizeIcon",
     },
   },
 });
@@ -27,11 +28,9 @@ export type ComponentRenderFn<Props, State> = (
 
 type getButtonClassNamesType = typeof getButtonClassNames;
 type getButtonClassNamesProps = VariantProps<getButtonClassNamesType>;
-export type ButtonProps = Omit<React.ComponentProps<"button">, "children"> &
+export type ButtonProps = React.ComponentProps<"button"> &
   getButtonClassNamesProps & {
-    children?:
-      | React.ReactNode
-      | ((params: { className: string }) => React.ReactNode);
+    renderWithChild?: boolean;
   };
 
 export const Button = (props: ButtonProps) => {
@@ -40,13 +39,22 @@ export const Button = (props: ButtonProps) => {
     size = "default",
     className,
     children,
+    renderWithChild = false,
     ...reset
   } = props;
 
   const classNames = clsx(getButtonClassNames({ variant, size }), className);
 
-  if (typeof children === "function") {
-    return children({ className: classNames });
+  if (renderWithChild) {
+    const element = Children.only(children);
+    if (isValidElement(element)) {
+      return cloneElement(
+        element as React.ReactElement<{ className: string }>,
+        {
+          className: classNames,
+        },
+      );
+    }
   }
 
   return (
