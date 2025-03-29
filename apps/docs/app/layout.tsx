@@ -4,7 +4,6 @@ import Link from "next/link";
 import "./globals.css";
 import { ActiveButtonLink } from "./shared/ActiveLink";
 import LogoSvg from "./logo.svg";
-import Image from "next/image";
 import VaulDrawer from "./Drawer";
 
 const geistSans = Geist({
@@ -52,7 +51,7 @@ export default function RootLayout({
           <div className="flex h-full w-full items-center justify-between px-2">
             <div className="flex items-center gap-2">
               <Link href="/" className="ml-2">
-                <Image src={LogoSvg} alt="ss" width={30} height={30} />
+                <LogoSvg width={30} height={30} />
               </Link>
             </div>
             <RightNav />
