@@ -19,6 +19,7 @@ export const Aside = (props: AsideProps) => {
             </div>
           );
         })}
+        <div className="inline-flex">demo</div>
       </aside>
     </>
   );
