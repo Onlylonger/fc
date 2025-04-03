@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.custom-container {
+  @apply px-5 2xl:max-w-(--breakpoint-2xl) 2xl:mx-auto w-full;
+}

@@ -1,13 +1,13 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+import HeaderLink from "./HeaderLink.astro";
 import { AvatarIcon } from "@shilong/rc/icons";
 ---
 
-<header class="flex justify-between items-center h-12 px-2">
-	<h2><a href="/"><AvatarIcon size={32}/></a></h2>
-	<div class="flex items-center gap-4">
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="/">Home</HeaderLink>
-	</div>
+<header class="custom-container h-12 flex justify-between items-center">
+  <h2><a href="/"><AvatarIcon size={32} /></a></h2>
+  <div class="flex items-center gap-4">
+    <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/about">About</HeaderLink>
+    <HeaderLink href="/">Home</HeaderLink>
+  </div>
 </header>
