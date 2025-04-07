@@ -1,5 +1,12 @@
 ---
 import HomeLayout from "../layouts/HomeLayout.astro";
+import { Button, Theme } from "@radix-ui/themes";
 ---
 
-<HomeLayout> index </HomeLayout>
+<HomeLayout>
+  <h2 class="py-8 text-2xl">Simplify your work and life</h2>
+  <div class="flex gap-4 items-center">
+    <a href="/blog"><Button size="3">Blogs</Button></a>
+    <a href="/tools"><Button size="3" variant="outline">Tools</Button></a>
+  </div>
+</HomeLayout>
